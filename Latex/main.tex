@@ -1,0 +1,71 @@
+\documentclass[a4paper,twocolumn]{it-olz}
+% Please read the notices at the end of this file
+
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{epsfig}
+
+\usepackage[latin1]{inputenc}   % option depends of your computer platform
+\usepackage{wrapfig}
+
+\usepackage{amsfonts,amsmath,amssymb,array} % choose if needed
+
+% Further proceedings:
+%
+% Fill out the file elements.tex very carefully!
+%
+% The title of your contribution has to be entered in this file
+%
+% Your contribution should be in a file called 'contribution.tex'
+% and starts in general with something like '\section{Introduction}'.
+%
+% Drawings should be eps-files and placed with the command
+% \includegraphics[width=...]{....eps}
+% (Read about figure/table and twocolumn in LaTeX!)
+%
+% Your photos are to be called
+%   photo_one.eps
+%   phozo_two.eps
+%   photo_three.eps
+%
+% If there are more authors than three, no photos at all are needed.
+%
+% Be careful with invoking more style files, they might clash.
+% Their values should be critically regarded: if you need a certain
+% definition only one time it might be done better by hand.
+
+\input{elements}             % sine qua non!
+\input cmrfont.sty           % author's version
+
+
+\hyphenation{}
+
+\emergencystretch=10pt
+
+\begin{document}
+
+
+\AfterChapterskip=13mm plus 5mm minus 1mm
+%\AfterChapterskip=12.9mm plus 5mm minus 1mm  %finetuning 1st page
+%\AfterChapterskip=16.4mm plus 5mm minus 1mm  %finetuning 1st page
+% More often than not some finetuning for the 1st page is advisable
+
+\setcounter{page}{1}
+
+
+\chapter[]{\TitleEnglish}
+
+\input contribution
+
+%\input references
+
+\bibliographystyle{acm}
+\bibliography{sample}
+\vspace{8.5mm} % right?
+
+\input aut_info  %short bios and passport photographs are expected 
+
+\end{document}
+
+\endinput
+

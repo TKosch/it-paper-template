@@ -1,0 +1,160 @@
+%%
+%% This is file `olz.clo'
+%% 
+%% 
+%% You are allowed to distribute this file under the condition that
+%% it is distributed unchanged
+%% 
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+\ProvidesFile{olz.clo}
+              [2000/02/10
+             at, tm and it size option]
+\renewcommand\normalsize{%
+%Korrigiert auf 0.4125mm Zeilenabstand 
+%   \@setfontsize\normalsize{11.2}{11.713}
+%   \@setfontsize\normalsize{11.0}{11.6}
+   \@setfontsize\normalsize{10.25}{12.237}
+   \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+\let\@normalsize\normalsize
+\normalsize
+\newcommand*\small{%
+   \@setfontsize\small{9}{9.5}%
+   \abovedisplayskip 8.5\p@ \@plus3\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus2\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \belowdisplayskip \abovedisplayskip
+}
+\newcommand*\footnotesize{%
+   \@setfontsize\footnotesize{9}{9.5}%
+   \abovedisplayskip 6\p@ \@plus2\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus\p@
+   \belowdisplayshortskip 3\p@ \@plus\p@ \@minus2\p@
+   \belowdisplayskip \abovedisplayskip
+}
+\newcommand*\scriptsize{\@setfontsize\scriptsize{8}{8.7}}
+\newcommand*\tiny{\@setfontsize\tiny\@vpt\@vipt}
+\newcommand*\large{\@setfontsize\large{14.5}{15.2}}
+\newcommand*\Large{\@setfontsize\Large{30}{32}}
+\newcommand*\LARGE{\@setfontsize\LARGE{30}{32}}
+\let\huge\LARGE
+\let\Huge\LARGE
+\setlength\headheight{12\p@}
+%\setlength\headsep   {25\p@}
+\setlength\headsep   {28.5\p@}
+%\setlength\topskip   {10\p@}
+\newskip\NormalesTopskip
+%\setlength\NormalesTopskip{9.16pt} % ok fuer 10pt Schrift
+\setlength\NormalesTopskip{6.5pt}  %10.3 ist zu wenig
+\setlength\topskip{\NormalesTopskip}
+\setlength\footskip{33\p@}   %
+%\setlength\footskip{30\p@}   %
+\if@compatibility
+  \setlength\maxdepth{4\p@}
+\else
+  \setlength\maxdepth{.5\topskip}
+\fi
+\if@twocolumn
+    \setlength\textwidth{178mm}
+  \else
+    \setlength\textwidth{178mm}
+\fi
+%\setlength\textheight{246.5mm} %alte version
+\setlength\textheight{57\baselineskip}
+\advance\textheight by \topskip
+\advance\textheight by 3.5pt
+\if@twocolumn
+ \setlength\marginparsep {10\p@}
+\else
+  \setlength\marginparsep{11\p@}
+\fi
+\setlength\marginparpush{5\p@}
+\if@compatibility
+  \if@twoside
+     \setlength\oddsidemargin   {44\p@}
+     \setlength\evensidemargin  {82\p@}
+     \setlength\marginparwidth {107\p@}
+  \else
+     \setlength\oddsidemargin   {63\p@}
+     \setlength\evensidemargin  {63\p@}
+     \setlength\marginparwidth  {90\p@}
+  \fi
+  \if@twocolumn
+     \setlength\oddsidemargin  {30\p@}
+     \setlength\evensidemargin {30\p@}
+     \setlength\marginparwidth {48\p@}
+  \fi
+\else
+  \if@twoside
+    \setlength\@tempdima        {\paperwidth}
+    \addtolength\@tempdima      {-\textwidth}
+    \setlength\oddsidemargin    {.4\@tempdima}
+    \addtolength\oddsidemargin  {-1in}
+    \setlength\marginparwidth   {.6\@tempdima}
+    \addtolength\marginparwidth {-\marginparsep}
+    \addtolength\marginparwidth {-0.4in}
+  \else
+    \setlength\@tempdima        {\paperwidth}
+    \addtolength\@tempdima      {-\textwidth}
+    \setlength\oddsidemargin    {.5\@tempdima}
+    \addtolength\oddsidemargin  {-1in}
+    \setlength\marginparwidth   {.5\@tempdima}
+    \addtolength\marginparwidth {-\marginparsep}
+    \addtolength\marginparwidth {-.4in}
+  \fi
+  \ifdim \marginparwidth >2in
+     \setlength\marginparwidth{2in}
+  \fi
+  \@settopoint\oddsidemargin
+  \@settopoint\marginparwidth
+  \setlength\evensidemargin  {\paperwidth}
+  \addtolength\evensidemargin{-2in}
+  \addtolength\evensidemargin{-\textwidth}
+  \addtolength\evensidemargin{-\oddsidemargin}
+  \@settopoint\evensidemargin
+\fi
+\if@compatibility
+  \setlength\topmargin{27pt}
+\else
+  \setlength\topmargin{\paperheight}
+  \addtolength\topmargin{-2in}
+  \addtolength\topmargin{-\headheight}
+  \addtolength\topmargin{-\headsep}
+  \addtolength\topmargin{-\textheight}
+  \addtolength\topmargin{-\footskip}     % this might be wrong!
+  \addtolength\topmargin{-.5\topmargin}
+  \@settopoint\topmargin
+\fi
+\setlength\footnotesep{6.65\p@}
+\setlength{\skip\footins}{9\p@ \@plus 4\p@ \@minus 2\p@}
+\setlength\floatsep    {8mm \@plus 2mm \@minus 2mm}
+\setlength\textfloatsep{8mm \@plus 2mm \@minus 2mm}
+\setlength\intextsep   {8mm \@plus 2mm \@minus 2mm}
+\setlength\dblfloatsep    {12\p@ \@plus 2\p@ \@minus 2\p@}
+\setlength\dbltextfloatsep{20\p@ \@plus 2\p@ \@minus 4\p@}
+\setlength\@fptop{0\p@ \@plus 1fil}
+\setlength\@fpsep{8\p@ \@plus 2fil}
+\setlength\@fpbot{0\p@ \@plus 1fil}
+\setlength\@dblfptop{0\p@ \@plus 1fil}
+\setlength\@dblfpsep{8\p@ \@plus 2fil}
+\setlength\@dblfpbot{0\p@ \@plus 1fil}
+\endinput
+%%
+%% End of file `ntg10.clo'.

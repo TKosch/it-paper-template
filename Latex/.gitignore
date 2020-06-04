@@ -1,0 +1,25 @@
+## Core latex/pdflatex auxiliary files:
+__latexindent_temp.tex
+.DS_Store
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.tdo
+*.synctex.gz
+cl_survey.pdf
+old/
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
